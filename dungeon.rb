@@ -7,10 +7,9 @@ class Dungeon
   end
 end
 
-class Player
-  attr_accessor :name, :location
+Player = Struct.new(:name, :location)
+Room = Struct.new(:reference, :name, :description, :connections)
 
-  def initialize(player_name)
-    @name = player_name
-  end
-end
+me = Player.new("Dany")
+calab = Dungeon.new(me)
+puts calab.player.name
